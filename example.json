@@ -1,7 +1,8 @@
 {
-    "type": "example",
-    "name": "my-hook",
+    "type": "http",
+    "name": "http-example",
     "config": {
-        "message": "anomaly detected!"
+        "method": "POST",
+        "url": "http://localhost:8085"
     }
 }

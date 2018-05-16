@@ -16,37 +16,31 @@
 # Copyright Red Mint Network
 
 """
-Setup plug-in exemple for LoudML
+Setup HTTP plug-in for LoudML
 """
 
 from setuptools import setup
 
 setup(
-    name='loudml-plugin-example',
+    name='loudml-plugin-http',
 
     version='1.3.0',
 
-    description="Example of plug-in for LoudML. Fork it to create your own!",
+    description="Plug-in providing HTTP-based notifier for LoudML",
 
     py_modules = [
-        'loudml_plugin_example',
+        'loudml_plugin_http',
     ],
 
     install_requires=[
         'loudml',
         'loudml-api',
+        'requests',
     ],
 
     entry_points={
-        'loudml.plugins': [
-            # Register here your plug-in class.
-            # '<plugin_name>=<module>:<plugin_class>,
-            'example=loudml_plugin_example:ExamplePlugin',
-        ],
         'loudml.hooks': [
-            # Register here your hooks.
-            # '<hook_name>=<module>:<hook_class>'
-            'example=loudml_plugin_example:ExampleHook',
+            'http=loudml_plugin_http:HTTPHook',
         ],
     },
 )
