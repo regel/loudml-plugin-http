@@ -47,6 +47,7 @@ class HTTPHook(Hook):
         score,
         predicted,
         observed,
+        anomalies,
         *args,
         **kwargs
     ):
@@ -57,6 +58,7 @@ class HTTPHook(Hook):
             'score': score,
             'predicted': predicted,
             'observed': observed,
+            'anomalies': anomalies,
         })
 
     def on_anomaly_end(

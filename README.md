@@ -53,7 +53,7 @@ Example:
     "type": "anomaly_start",
     "model": "mymodel",
     "timestamp": 1526484353.267578,
-    "score": 82,
+    "score": 82.0,
     "predicted": {
         "foo": 18.0,
         "bar": 5.0
@@ -61,6 +61,16 @@ Example:
     "observed": {
         "foo": 26.0,
         "bar": 1.0
+    },
+    "anomalies": {
+        "foo" {
+            "score": 82.0,
+            "type": "high"
+        },
+        "bar": {
+            "score": 75.0,
+            "type": "low"
+        }
     }
 }
 ```
@@ -71,7 +81,7 @@ When the anomaly ends, LoudML will send a query with this body:
 
 ```json
 {
-    "type": "anomaly_start",
+    "type": "anomaly_end",
     "model": <model_name>,
     "timestamp": <timestamp>,
     "score": <score>,
@@ -82,10 +92,10 @@ Example:
 
 ```json
 {
-    "type": "anomaly_start",
+    "type": "anomaly_end",
     "model": "mymodel",
     "timestamp": 1526485853.767845,
-    "score": 68,
+    "score": 68.0,
     "predicted": {
         "foo": 17.5,
         "bar": 5.1
