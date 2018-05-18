@@ -57,13 +57,13 @@ Example:
     "predicted": {
         "foo": 18.0,
         "bar": 5.0
-    }
+    },
     "observed": {
         "foo": 26.0,
         "bar": 1.0
     },
     "anomalies": {
-        "foo" {
+        "foo": {
             "score": 82.0,
             "type": "high"
         },
@@ -99,7 +99,7 @@ Example:
     "predicted": {
         "foo": 17.5,
         "bar": 5.1
-    }
+    },
     "observed": {
         "foo": 17.2,
         "bar": 5.0
